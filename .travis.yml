@@ -7,4 +7,4 @@ before_install:
   # current directory at the end, tag with -t, force config file with -f
 
 script:
-  - docker run rossyp44docker/docker-react npm run test -- --coverage
+  - docker run -e CI=true rossyp44docker/docker-react npm run test -- --coverage
