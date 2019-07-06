@@ -1,0 +1,10 @@
+sudo: required
+services: 
+  - docker # we need a copy of docker ready to go
+
+before_install: 
+  - docker build -t rossyp44docker/docker-react -f Dockerfile.dev . 
+  # current directory at the end, tag with -t, force config file with -f
+
+script:
+  - docker run rossyp44docker/docker-react npm run test -- --coverage
